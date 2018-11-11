@@ -6,9 +6,8 @@
  */
 function basic_sum(n) {
   let sum = 0;
-  let i;
-  for(i = 1; i <= n; i++) {
-    sum += i;
+  for(let i = 1; i <= n; i++) {
+    sum += i; //increment sum by i
   }
   return sum;
 }
@@ -20,10 +19,9 @@ function basic_sum(n) {
  */
 function sum_3_5(n) {
   let sum = 0;
-  let i;
-  for(i = 1; i <= n; i++) {
+  for(let i = 1; i <= n; i++) {
     if(i % 3 == 0 || i % 5 == 0) {
-    sum += i;
+    sum += i; //increment sum by i which is multiple of 3 or 5.
     }
   }
   return sum;
@@ -37,8 +35,8 @@ function sum_3_5(n) {
 function largest_int(arr) {
   let max = 0;
   for(let i = 0; i <= arr.length - 1; i++) {
-    if(arr[i] > max) {
-      max = arr[i];
+    if(arr[i] > max) { //if current iteration's value of arr greater than max
+      max = arr[i]; //Assign max to the next value in arr that is greater than previous max.
     }
   }
   return max;
@@ -52,7 +50,7 @@ function largest_int(arr) {
  */
 function in_array(arr, valToCheckFor) {
   for(let i = 0; i <= arr.length-1; i++) {
-    if(arr[i] == valToCheckFor) {
+    if(arr[i] == valToCheckFor) { //if current iteration's value is equal to valToCheckFor argument
       return true;
     }
   }
@@ -69,11 +67,11 @@ function concat_arrays(arr1, arr2) {
   let concat_array = new Array();
 
   for(let i = 0; i < arr1.length; i++) {
-    concat_array.push(arr1[i]);
+    concat_array.push(arr1[i]); //push each value of arr1 onto concat_array
   }
 
   for(let j = 0; j < arr2.length; j++) {
-    concat_array.push(arr2[j]);
+    concat_array.push(arr2[j]); //push each value of arr2 onto concat_array
   }
   return concat_array;
 }
@@ -86,10 +84,13 @@ function concat_arrays(arr1, arr2) {
  * @return {object} the food object
  */
 function food_object_factory(name, ...ingredients) {
+
+  //new array my_ingredients
   let my_ingredients = new Array();
   for(let i = 1; i < arguments.length; i++) {
-    my_ingredients.push(arguments[i]);
+    my_ingredients.push(arguments[i]); //push all arguments after index 0 onto my_ingredients.
   }
+  //food object with name and ingredients property, with values name and my_ingredients.
   let food_object = {
     name: name,
     ingredients: my_ingredients
